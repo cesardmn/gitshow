@@ -1,0 +1,49 @@
+.profile,
+.cards {
+  height: 100%;
+  width: 25%;
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: 'Audiowide', cursive;
+  font-size: xx-large;
+  margin-bottom: 2.5rem;
+}
+
+.display {
+  height: 100%;
+  width: 50%;
+}
+
+.avatar {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.avatar img {
+  height: auto;
+  width: 100%;
+  border-radius: 50%;
+  border: var(--border);
+}
+
+.userName {
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 0.5rem;
+}
+
+.bio {
+  font-size: small;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-light);
+}

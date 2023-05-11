@@ -1,0 +1,72 @@
+:root {
+  /* blue */
+  --blue-lighter: #2b3945;
+  --blue-normal: #202c37;
+  --blue-bolder: #111517;
+
+  /* grey */
+  --grey-lighter: #ffffff;
+  --grey-normal: #fafafa;
+  --grey-bolder: #858585;
+}
+
+:root .dark {
+  --primary-text: var(--grey-lighter);
+  --placeholder-text: var(--grey-normal);
+  --bg: var(--blue-normal);
+  --box: var(--blue-lighter);
+  --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+:root .light {
+  --primary-text: var(--blue-bolder);
+  --placeholder-text: var(--grey-bolder);
+  --bg: var(--grey-normal);
+  --box: var(--grey-lighter);
+  --nav-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* border: transparent;
+  outline: transparent; */
+}
+
+html {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#__next {
+  height: inherit;
+  width: inherit;
+  overflow: hidden;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--blue-bolder);
+}

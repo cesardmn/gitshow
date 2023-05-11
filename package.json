@@ -4,13 +4,22 @@
   "description": "This project enables GitHub users to sign in and display one or multiple repositories on a public dashboard for all to view.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cesardmn/gitshow.git"
   },
-  "keywords": ["NextJs", "React", "HTML", "CSS", "JavaScript"],
+  "keywords": [
+    "NextJs",
+    "React",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
   "author": "Cesar Dimi",
   "license": "ISC",
   "bugs": {
@@ -19,5 +28,10 @@
   "homepage": "https://github.com/cesardmn/gitshow#readme",
   "devDependencies": {
     "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

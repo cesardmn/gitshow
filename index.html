@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This project enables GitHub users to sign in and display one or multiple repositories on a public dashboard for all to view."
+    />
+    <title>Git Show</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- PROFILE / LOGIN -->
+      <section class="profile">
+        <h1 class="logo">GitShow</h1>
+
+        <picture class="avatar">
+          <img
+            src="https://avatars.githubusercontent.com/u/40774019?v=4"
+            alt="avatar"
+          />
+        </picture>
+
+        <!-- IS LOGON -->
+        <div class="is-logon">
+          <h3 class="userName">Cesar Dimi</h3>
+          <p class="bio">
+            Front-end developer| JavaScript | React | NextJs | Python | Django
+          </p>
+
+          <form action="">
+            <label for="repositories">Repositórios</label>
+            <select name="repositories" id="repositories">
+              <option value="calculator_app">calculator_app</option>
+              <option value="rest-countries-api">rest-countries-api</option>
+            </select>
+
+            <input
+              type="url"
+              name="preview-url"
+              id="preview-url"
+              placeholder="url do preview"
+            />
+
+            <button type="submit">cadastrar</button>
+          </form>
+        </div>
+
+        <!-- SIGN IN -->
+        <div class="social-login" hidden>
+          <button>GitHub login</button>
+        </div>
+
+        <!--  -->
+      </section>
+
+      <!-- CARDS -->
+      <section class="cards">
+        <ul>
+          <li>
+            <img
+              src="https://opengraph.githubassets.com/1537155882be1db0976d83928ee4c7a6fcdd2d241b69972ffb57b6c90e0f647ed/cesardmn/password_generator"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://opengraph.githubassets.com/1537155882be1db0976d83928ee4c7a6fcdd2d241b69972ffb57b6c90e0f647ed/sergiohrodrigues/blogr-landing-page"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://opengraph.githubassets.com/1537155882be1db0976d83928ee4c7a6fcdd2d241b69972ffb57b6c90e0f647ed/cesardmn/password_generator"
+              alt=""
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- DISPLAY / HERO -->
+      <section class="display">
+        <img
+          src="https://github.com/cesardmn/calculator_app/raw/main/src/img/preview.gif"
+          alt=""
+        />
+      </section>
+    </main>
+    <script src="./index.js" defer></script>
+  </body>
+</html>

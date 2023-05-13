@@ -1,49 +1,74 @@
-.profile,
-.cards {
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.profileWrapper {
   height: 100%;
-  width: 25%;
-  border: var(--border);
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-.logo {
-  font-family: 'Audiowide', cursive;
-  font-size: xx-large;
-  margin-bottom: 2.5rem;
-}
-
-.display {
+.user {
   height: 100%;
-  width: 50%;
+  width: 100%;
+  padding: 1rem;
+}
+.user {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+.user {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.user {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profileWrapper h1 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Audiowide', cursive;
+  font-size: xxx-large;
 }
 
 .avatar {
-  height: auto;
   width: 100%;
-  overflow: hidden;
+  height: 100%;
 }
 
 .avatar img {
   height: auto;
   width: 100%;
   border-radius: 50%;
-  border: var(--border);
 }
 
-.userName {
-  text-align: center;
-  font-size: x-large;
-  margin-bottom: 0.5rem;
+.user h2 {
+  margin-top: 1rem;
+}
+.user h3 {
+  color: var(--grey-bolder);
+  font-weight: lighter;
+  margin-top: -0.5rem;
 }
 
-.bio {
-  font-size: small;
-  line-height: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--text-light);
+.user p {
+  margin-top: 1rem;
+}
+
+.footer {
+  font-size: smaller;
+  width: 100%;
+  padding: 1rem;
 }

@@ -1,44 +1,52 @@
+import { useState } from 'react'
 import styles from '@styles/Profile.module.css'
 
 export default function Profile() {
-  return (
-    <section className={styles.profile}>
-      <h1 className={styles.logo}>GitShow</h1>
+  const [isLogin, setIsLogin] = useState(true)
 
-      <picture className={styles.avatar}>
-        <img
-          src="https://avatars.githubusercontent.com/u/40774019?v=4"
-          alt="avatar"
-        />
-      </picture>
+  const user = {
+    avatar: 'https://avatars.githubusercontent.com/u/40774019?v=4',
+    name: 'Cesar Dimi',
+    username: 'cesardmn',
+    bio: 'Front-end developer| JavaScript | React | NextJs | Python | Django',
+    location: 'Niterói, Brasil',
+  }
 
-      <div className={styles.isLogon}>
-        <h3 className={styles.userName}>Cesar Dimi</h3>
-        <p className={styles.bio}>
-          Front-end developer| JavaScript | React | NextJs | Python | Django
-        </p>
+  const handleLogin = () => {
+    setIsLogin(true)
+  }
 
-        <form action="">
-          <label htmlFor="repositories">Repositórios</label>
-          <select name="repositories" id="repositories">
-            <option value="calculator_app">calculator_app</option>
-            <option value="rest-countries-api">rest-countries-api</option>
-          </select>
+  if (isLogin) {
+    return (
+      <div className={styles.profileWrapper}>
+        <h1>GitShow</h1>
+        {/* Conteúdo para usuário logado */}
 
-          <input
-            type="url"
-            name="preview-url"
-            id="preview-url"
-            placeholder="url do preview"
-          />
+        <picture className={styles.avatar}>
+          <img src={user.avatar} alt="avatar" />
+        </picture>
+        <div className={styles.user}>
+          <h2>{user.name}</h2>
+          <h3>{user.username}</h3>
 
-          <button type="submit">cadastrar</button>
+          <p>{user.bio}</p>
+
+          <p className={styles.location}>{user.location}</p>
+        </div>
+
+        <footer className={styles.footer}>
+          <span>Cesar Dimi - 2023</span>
+        </footer>
+      </div>
+    )
+  } else {
+    return (
+      <div className="profileWrapper">
+        <h1>Profile Wrapper</h1>
+        <form onSubmit={handleLogin}>
+          <button type="submit">Logar com GitHub</button>
         </form>
       </div>
-
-      <div className={styles.socialLogin} hidden>
-        <button>GitHub login</button>
-      </div>
-    </section>
-  )
+    )
+  }
 }

@@ -7,23 +7,9 @@
   /* grey */
   --grey-lighter: #ffffff;
   --grey-normal: #fafafa;
-  --grey-bolder: #858585;
-}
+  --grey-bolder: #656d76;
 
-:root .dark {
-  --primary-text: var(--grey-lighter);
-  --placeholder-text: var(--grey-normal);
-  --bg: var(--blue-normal);
-  --box: var(--blue-lighter);
   --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-:root .light {
-  --primary-text: var(--blue-bolder);
-  --placeholder-text: var(--grey-bolder);
-  --bg: var(--grey-normal);
-  --box: var(--grey-lighter);
-  --nav-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 * {
@@ -32,8 +18,9 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* border: transparent;
-  outline: transparent; */
+  border: transparent;
+  outline: transparent;
+  /* border: 1px solid var(--blue-bolder); */
 }
 
 html {
@@ -46,6 +33,8 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
 
 li {
@@ -68,5 +57,21 @@ a {
 .app {
   height: 100%;
   width: 100%;
-  border: 1px solid var(--blue-bolder);
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-areas: 'profile repos display';
+}
+
+.profile {
+  grid-area: profile;
+  border: 1px solid grey;
+}
+.repos {
+  background-color: green;
+  grid-area: repos;
+}
+
+.display {
+  background-color: blue;
+  grid-area: display;
 }

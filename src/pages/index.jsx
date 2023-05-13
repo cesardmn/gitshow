@@ -1,4 +1,4 @@
-import Display from '@src/components/Desplay'
+import Display from '@src/components/Display'
 import Profile from '@src/components/Profile'
 import Repos from '@src/components/Repos'
 

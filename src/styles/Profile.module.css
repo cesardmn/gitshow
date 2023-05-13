@@ -1,57 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-.profileWrapper {
+* .profileWrapper {
   height: 100%;
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  gap: 2rem;
-}
-
-.user {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-}
-.user {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-}
-.user {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-}
-
-.user {
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  /* padding: 1rem; */
+  gap: 1rem;
 }
 
 .profileWrapper h1 {
+  height: 10%;
   width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Audiowide', cursive;
   font-size: xxx-large;
 }
-
 .avatar {
+  height: 50%;
   width: 100%;
-  height: 100%;
+  text-align: center;
+  padding: 1rem;
+  object-fit: cover;
 }
 
 .avatar img {
   height: auto;
   width: 100%;
   border-radius: 50%;
+  color: var(--grey-bolder);
+}
+
+.user {
+  height: 35%;
+  width: 100%;
+  padding: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 2rem;
+}
+
+.footer {
+  width: 100%;
+  height: 2%;
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--grey-bolder);
 }
 
 .user h2 {
@@ -63,12 +67,22 @@
   margin-top: -0.5rem;
 }
 
-.user p {
-  margin-top: 1rem;
+.bio {
+  margin: 1.5rem 0;
 }
 
-.footer {
-  font-size: smaller;
+.gitButton {
   width: 100%;
+  border: grey;
   padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: var(--nav-shadow);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.gitButton:hover {
+  scale: 1.1;
 }

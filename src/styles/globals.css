@@ -63,15 +63,17 @@ a {
 }
 
 .profile {
+  overflow: hidden;
   grid-area: profile;
-  border: 1px solid grey;
 }
 .repos {
+  overflow: hidden;
   background-color: green;
   grid-area: repos;
 }
 
 .display {
+  overflow: hidden;
   background-color: blue;
   grid-area: display;
 }

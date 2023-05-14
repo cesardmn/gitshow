@@ -82,7 +82,25 @@
   cursor: pointer;
   transition: 0.5s;
 }
-
 .gitButton:hover {
+  scale: 1.1;
+}
+
+.signOutButton {
+  width: 88px;
+  border: grey;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: xx-small;
+  border-radius: 8px;
+  box-shadow: var(--nav-shadow);
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--grey-bolder);
+  margin-top: 1rem;
+}
+
+.signOutButton:hover {
   scale: 1.1;
 }

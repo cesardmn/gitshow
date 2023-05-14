@@ -1,37 +1,49 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from '@styles/Profile.module.css'
 
+import { useSession, signIn, signOut } from 'next-auth/react'
+
 export default function Profile() {
-  const [isLogin, setIsLogin] = useState(false)
+  const [user, setUser] = useState({})
+  const { data: session } = useSession()
 
-  const user = {
-    avatar: 'https://avatars.githubusercontent.com/u/40774019?v=4',
-    name: 'Cesar Dimi',
-    username: 'cesardmn',
-    bio: 'Front-end developer| JavaScript | React | NextJs | Python | Django',
-    location: 'Niterói, Brasil',
-  }
+  useEffect(() => {
+    if (session) {
+      const regex = /.*\.com\/u\/(\d+)\D.*/
+      const id = session.user.image.match(regex)[1]
+      const url = `https://api.github.com/user/${id}`
 
-  const handleLogin = (e) => {
-    e.preventDefault()
-    setIsLogin(true)
-  }
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          setUser({
+            name: data.name,
+            login: data.login,
+            bio: data.bio,
+            location: data.location,
+            avatar_url: data.avatar_url,
+            repos_url: data.repos_url,
+          })
+        })
+        .catch((error) => console.error(error))
+    }
+  }, [session])
 
-  if (isLogin) {
+  if (session) {
     return (
       <div className={styles.profileWrapper}>
-        {/* 10 */}
         <h1>GitShow</h1>
 
-        {/* 50- */}
         <picture className={styles.avatar}>
-          <img src={user.avatar} alt="avatar" />
+          <img src={user.avatar_url} alt="avatar" />
         </picture>
 
-        {/* 35 */}
         <div className={styles.user}>
           <h2>{user.name}</h2>
-          <h3>{user.username}</h3>
+          <h3>{user.login}</h3>
+          <button className={styles.signOutButton} onClick={() => signOut()}>
+            Sign out
+          </button>
 
           <p className={styles.bio}>{user.bio}</p>
 
@@ -41,7 +53,6 @@ export default function Profile() {
           </p>
         </div>
 
-        {/* 5 */}
         <footer className={styles.footer}>Cesar Dimi - 2023</footer>
       </div>
     )
@@ -49,19 +60,12 @@ export default function Profile() {
     return (
       <div className={styles.profileWrapper}>
         <h1>GitShow</h1>
-        {/* Conteúdo para usuário logado */}
-
         <picture className={styles.avatar}>
           <img src="./avatar.svg" alt="avatar" />
         </picture>
         <div className={styles.user}>
           <form>
-            <button
-              className={styles.gitButton}
-              onClick={(e) => {
-                handleLogin(e)
-              }}
-            >
+            <button className={styles.gitButton} onClick={() => signIn()}>
               Entrar com GitHub
             </button>
           </form>

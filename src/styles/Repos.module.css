@@ -1,0 +1,62 @@
+.reposWraper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--grey-lighter);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: var(--grey-bolder);
+  transition: 0.2s;
+}
+
+.card:hover {
+  background-color: var(--grey-normal);
+  scale: 1.02;
+}
+
+.repoTitle {
+  height: 100%;
+  width: 100%;
+  color: #0969da;
+  font-weight: bold;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.repoIcon {
+  height: 100%;
+  width: 2;
+  font-weight: lighter;
+  color: var(--blue-normal);
+}
+
+.language {
+  position: relative;
+  margin-left: 2rem;
+}
+
+.language::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 5px;
+  border-radius: 50%;
+  background-color: #fd8c73;
+  margin-left: -1.5rem;
+}

@@ -5,8 +5,8 @@
   --blue-bolder: #111517;
 
   /* grey */
-  --grey-lighter: #ffffff;
-  --grey-normal: #fafafa;
+  --grey-lighter: #d0d7de;
+  --grey-normal: #656d762a;
   --grey-bolder: #656d76;
 
   --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -65,15 +65,18 @@ a {
 .profile {
   overflow: hidden;
   grid-area: profile;
+  min-width: 320px;
 }
 .repos {
   overflow: hidden;
-  background-color: green;
+  border-left: 1px solid rgba(128, 128, 128, 0.242);
   grid-area: repos;
+  min-width: 320px;
 }
 
 .display {
   overflow: hidden;
   background-color: blue;
   grid-area: display;
+  min-width: 320px;
 }

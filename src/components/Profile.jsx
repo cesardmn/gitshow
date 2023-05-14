@@ -3,9 +3,11 @@ import styles from '@styles/Profile.module.css'
 
 import { useSession, signIn, signOut } from 'next-auth/react'
 
+import { useUser } from '@providers/UserProvider.jsx'
+
 export default function Profile() {
   const { data: session } = useSession()
-  const [user, setUser] = useState(null)
+  const { user, setUser } = useUser()
   const [loading, setLoading] = useState(!!session)
 
   useEffect(() => {

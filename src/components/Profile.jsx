@@ -4,18 +4,20 @@ import styles from '@styles/Profile.module.css'
 import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function Profile() {
-  const [user, setUser] = useState({})
   const { data: session } = useSession()
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(!!session)
 
   useEffect(() => {
-    if (session) {
-      const regex = /.*\.com\/u\/(\d+)\D.*/
-      const id = session.user.image.match(regex)[1]
-      const url = `https://api.github.com/user/${id}`
+    async function loadUser() {
+      if (session) {
+        const regex = /.*\.com\/u\/(\d+)\D.*/
+        const id = session.user.image.match(regex)[1]
+        const url = `https://api.github.com/user/${id}`
 
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
+        try {
+          const response = await fetch(url)
+          const data = await response.json()
           setUser({
             name: data.name,
             login: data.login,
@@ -24,12 +26,22 @@ export default function Profile() {
             avatar_url: data.avatar_url,
             repos_url: data.repos_url,
           })
-        })
-        .catch((error) => console.error(error))
+        } catch (error) {
+          console.error(error)
+        } finally {
+          setLoading(false)
+        }
+      }
     }
+
+    loadUser()
   }, [session])
 
-  if (session) {
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (session && user) {
     return (
       <div className={styles.profileWrapper}>
         <h1>GitShow</h1>
@@ -48,7 +60,6 @@ export default function Profile() {
           <p className={styles.bio}>{user.bio}</p>
 
           <p className={styles.location}>
-            {' '}
             <img src="./location.svg" alt="" /> {user.location}
           </p>
         </div>
@@ -56,25 +67,25 @@ export default function Profile() {
         <footer className={styles.footer}>Cesar Dimi - 2023</footer>
       </div>
     )
-  } else {
-    return (
-      <div className={styles.profileWrapper}>
-        <h1>GitShow</h1>
-        <picture className={styles.avatar}>
-          <img src="./avatar.svg" alt="avatar" />
-        </picture>
-        <div className={styles.user}>
-          <form>
-            <button className={styles.gitButton} onClick={() => signIn()}>
-              Entrar com GitHub
-            </button>
-          </form>
-        </div>
-
-        <footer className={styles.footer}>
-          <span>Cesar Dimi - 2023</span>
-        </footer>
-      </div>
-    )
   }
+
+  return (
+    <div className={styles.profileWrapper}>
+      <h1>GitShow</h1>
+      <picture className={styles.avatar}>
+        <img src="./avatar.svg" alt="avatar" />
+      </picture>
+      <div className={styles.user}>
+        <form>
+          <button className={styles.gitButton} onClick={() => signIn()}>
+            Entrar com GitHub
+          </button>
+        </form>
+      </div>
+
+      <footer className={styles.footer}>
+        <span>Cesar Dimi - 2023</span>
+      </footer>
+    </div>
+  )
 }

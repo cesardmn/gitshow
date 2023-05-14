@@ -20,14 +20,7 @@ export default function Profile() {
         try {
           const response = await fetch(url)
           const data = await response.json()
-          setUser({
-            name: data.name,
-            login: data.login,
-            bio: data.bio,
-            location: data.location,
-            avatar_url: data.avatar_url,
-            repos_url: data.repos_url,
-          })
+          setUser(data)
         } catch (error) {
           console.error(error)
         } finally {
@@ -35,11 +28,11 @@ export default function Profile() {
         }
       }
     }
-
     loadUser()
   }, [session])
 
   if (loading) {
+    // todo skeleton
     return <div>Loading...</div>
   }
 

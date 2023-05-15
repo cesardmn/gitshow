@@ -15,7 +15,6 @@
   padding: 1rem;
   border: 1px solid var(--grey-lighter);
   border-radius: 8px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -48,6 +47,8 @@
 .language {
   position: relative;
   margin-left: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .language::before {
@@ -59,4 +60,15 @@
   border-radius: 50%;
   background-color: #fd8c73;
   margin-left: -1.5rem;
+}
+
+.showButton{
+  cursor: pointer;
+  text-align: right;
+}
+
+.showButton:hover {
+  color: #0969da;
+  text-decoration: underline;
+  text-decoration-color: #fd8c73;
 }

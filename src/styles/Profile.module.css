@@ -10,9 +10,11 @@
   justify-content: space-between;
   /* padding: 1rem; */
   gap: 1rem;
+  position: relative;
 }
 
 .profileWrapper h1 {
+  overflow: hidden;
   height: 10%;
   width: 100%;
   display: flex;
@@ -20,24 +22,43 @@
   justify-content: center;
   font-family: 'Audiowide', cursive;
   font-size: xxx-large;
+  color: #0969da;
+  position: relative;
 }
+
+.profileWrapper h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 43%;
+  height: 4px;
+  display: flex;
+  justify-content: end;
+  background-color: #fd837c;
+  right: 17%;
+  border-radius: 8px;
+}
+
+
+/*  */
 .avatar {
-  height: 50%;
+  height: 40%;
   width: 100%;
   text-align: center;
   padding: 1rem;
-  object-fit: cover;
+  overflow: hidden;
 }
 
 .avatar img {
-  height: auto;
-  width: 100%;
   border-radius: 50%;
+  height: 90%;
+  width: auto;
   color: var(--grey-bolder);
+  object-fit: cover;
 }
 
 .user {
-  height: 35%;
+  height: 55%;
   width: 100%;
   padding: 0.5rem;
   overflow: hidden;

@@ -4,11 +4,13 @@ import styles from '@styles/Profile.module.css'
 import { useSession, signIn, signOut } from 'next-auth/react'
 
 import { useUser } from '@providers/UserProvider.jsx'
+import { useDisplayRepo } from '@providers/DisplayRepoProvider.jsx'
 
 export default function Profile() {
   const { data: session } = useSession()
   const { user, setUser } = useUser()
   const [loading, setLoading] = useState(!!session)
+  const { setDisplayRepo } = useDisplayRepo()
 
   useEffect(() => {
     async function loadUser() {
@@ -31,6 +33,18 @@ export default function Profile() {
     loadUser()
   }, [session])
 
+  useEffect(() => {
+    if (session && user) {
+      fetch(`https://api.github.com/repos/${user.login}/${user.login}/readme`)
+        .then((response) => response.json())
+        .then((data) => {
+          const rawFileUrl =
+            data.message === 'Not Found' ? '' : data.download_url
+          setDisplayRepo(rawFileUrl)
+        })
+    }
+  }, [session])
+
   if (loading) {
     // todo skeleton
     return <div>Loading...</div>
@@ -46,7 +60,15 @@ export default function Profile() {
         </picture>
 
         <div className={styles.user}>
-          <h2>{user.name}</h2>
+          <h2>
+            <a
+              href={`https://github.com/${user.login}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {user.name}
+            </a>
+          </h2>
           <h3>{user.login}</h3>
           <button className={styles.signOutButton} onClick={() => signOut()}>
             Sign out

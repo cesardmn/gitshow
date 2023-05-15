@@ -1,6 +1,7 @@
 import '@src/styles/globals.css'
 import { SessionProvider } from 'next-auth/react'
 import { UserProvider } from '@providers/UserProvider.jsx'
+import { DisplayRepoProvider } from '@providers/DisplayRepoProvider.jsx'
 
 export default function App({
   Component,
@@ -9,7 +10,9 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <UserProvider>
-        <Component {...pageProps} />
+        <DisplayRepoProvider>
+          <Component {...pageProps} />
+        </DisplayRepoProvider>
       </UserProvider>
     </SessionProvider>
   )

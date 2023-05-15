@@ -8,6 +8,7 @@
 ## features
 - [x] Accessing the GitHub API.
 - [x] Social login with NextAuth.
+- [x] Rendering Markdown files.
 
 <br>
 

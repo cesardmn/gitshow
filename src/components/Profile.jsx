@@ -43,7 +43,7 @@ export default function Profile() {
           setDisplayRepo(rawFileUrl)
         })
     }
-  }, [session])
+  }, [session, user])
 
   if (loading) {
     // todo skeleton
@@ -93,11 +93,9 @@ export default function Profile() {
         <img src="./avatar.svg" alt="avatar" />
       </picture>
       <div className={styles.user}>
-        <form>
-          <button className={styles.gitButton} onClick={() => signIn()}>
-            Entrar com GitHub
-          </button>
-        </form>
+        <button className={styles.gitButton} onClick={() => signIn()}>
+          Entrar com GitHub
+        </button>
       </div>
 
       <footer className={styles.footer}>

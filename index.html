@@ -1,94 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="This project enables GitHub users to sign in and display one or multiple repositories on a public dashboard for all to view."
-    />
-    <title>Git Show</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Countries Data</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      :root {
+        font-size: 62.5%;
+      }
+
+      html {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        font-size: 1.6rem;
+      }
+
+      main {
+        position: relative;
+        border: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+      }
+
+      /*  */
+
+      @keyframes loader_5191 {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .square {
+        background: #30a14e;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+        margin-left: -5px;
+      }
+
+      #sq1 {
+        margin-top: -25px;
+        margin-left: -25px;
+        animation: loader_5191 675ms ease-in-out 0s infinite alternate;
+      }
+
+      #sq2 {
+        margin-top: -25px;
+        animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
+      }
+
+      #sq3 {
+        margin-top: -25px;
+        margin-left: 15px;
+        animation: loader_5191 675ms ease-in-out 150ms infinite;
+      }
+
+      #sq4 {
+        margin-left: -25px;
+        animation: loader_5191 675ms ease-in-out 225ms infinite;
+      }
+
+      #sq5 {
+        animation: loader_5191 675ms ease-in-out 300ms infinite;
+      }
+
+      #sq6 {
+        margin-left: 15px;
+        animation: loader_5191 675ms ease-in-out 375ms infinite;
+      }
+
+      #sq7 {
+        margin-top: 15px;
+        margin-left: -25px;
+        animation: loader_5191 675ms ease-in-out 450ms infinite;
+      }
+
+      #sq8 {
+        margin-top: 15px;
+        animation: loader_5191 675ms ease-in-out 525ms infinite;
+      }
+
+      #sq9 {
+        margin-top: 15px;
+        margin-left: 15px;
+        animation: loader_5191 675ms ease-in-out 600ms infinite;
+      }
+    </style>
   </head>
   <body>
     <main>
-      <!-- PROFILE / LOGIN -->
-      <section class="profile">
-        <h1 class="logo">GitShow</h1>
-
-        <picture class="avatar">
-          <img
-            src="https://avatars.githubusercontent.com/u/40774019?v=4"
-            alt="avatar"
-          />
-        </picture>
-
-        <!-- IS LOGON -->
-        <div class="is-logon">
-          <h3 class="userName">Cesar Dimi</h3>
-          <p class="bio">
-            Front-end developer| JavaScript | React | NextJs | Python | Django
-          </p>
-
-          <form action="">
-            <label for="repositories">Repositórios</label>
-            <select name="repositories" id="repositories">
-              <option value="calculator_app">calculator_app</option>
-              <option value="rest-countries-api">rest-countries-api</option>
-            </select>
-
-            <input
-              type="url"
-              name="preview-url"
-              id="preview-url"
-              placeholder="url do preview"
-            />
-
-            <button type="submit">cadastrar</button>
-          </form>
-        </div>
-
-        <!-- SIGN IN -->
-        <div class="social-login" hidden>
-          <button>GitHub login</button>
-        </div>
-
-        <!--  -->
-      </section>
-
-      <!-- CARDS -->
-      <section class="cards">
-        <ul>
-          <li>
-            <img
-              src="https://opengraph.githubassets.com/1537155882be1db0976d83928ee4c7a6fcdd2d241b69972ffb57b6c90e0f647ed/cesardmn/password_generator"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              src="https://opengraph.githubassets.com/1537155882be1db0976d83928ee4c7a6fcdd2d241b69972ffb57b6c90e0f647ed/sergiohrodrigues/blogr-landing-page"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              src="https://opengraph.githubassets.com/1537155882be1db0976d83928ee4c7a6fcdd2d241b69972ffb57b6c90e0f647ed/cesardmn/password_generator"
-              alt=""
-            />
-          </li>
-        </ul>
-      </section>
-
-      <!-- DISPLAY / HERO -->
-      <section class="display">
-        <img
-          src="https://github.com/cesardmn/calculator_app/raw/main/src/img/preview.gif"
-          alt=""
-        />
-      </section>
+      <div class="loader">
+        <div class="square" id="sq1"></div>
+        <div class="square" id="sq2"></div>
+        <div class="square" id="sq3"></div>
+        <div class="square" id="sq4"></div>
+        <div class="square" id="sq5"></div>
+        <div class="square" id="sq6"></div>
+        <div class="square" id="sq7"></div>
+        <div class="square" id="sq8"></div>
+        <div class="square" id="sq9"></div>
+      </div>
     </main>
-    <script src="./index.js" defer></script>
+    
+    <script>
+      setTimeout(() => {
+        window.location.href = 'https://gitshow-flax.vercel.app'
+      }, 1000)
+    </script>
   </body>
 </html>

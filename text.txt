@@ -1,2 +1,0 @@
-// "dev": "npx prisma migrate dev && next dev",
-// "start": "npx prisma migrate deploy && next start",

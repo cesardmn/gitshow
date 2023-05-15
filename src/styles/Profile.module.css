@@ -33,7 +33,7 @@
   width: 43%;
   height: 4px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   background-color: #fd837c;
   right: 17%;
   border-radius: 8px;

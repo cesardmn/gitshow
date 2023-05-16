@@ -6,6 +6,8 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 import { useUser } from '@providers/UserProvider.jsx'
 import { useDisplayRepo } from '@providers/DisplayRepoProvider.jsx'
 
+import { BsGithub } from 'react-icons/bs'
+
 export default function Profile() {
   const { data: session } = useSession()
   const { user, setUser } = useUser()
@@ -88,19 +90,25 @@ export default function Profile() {
 
   return (
     <div className={styles.profileWrapper}>
+      {/* 10 */}
       <h1>GitShow</h1>
-      <picture className={styles.avatar}>
-        <img src="./avatar.svg" alt="avatar" />
-      </picture>
-      <div className={styles.user}>
-        <button className={styles.gitButton} onClick={() => signIn()}>
-          Entrar com GitHub
-        </button>
+
+      {/* 10 */}
+      <p className={styles.about}>
+        A simpler way to view your GitHub repositories.
+      </p>
+
+      {/* 10 */}
+      <div className={styles.displayHero}>
+        <img src="./hero.gif" alt="" />
       </div>
 
-      <footer className={styles.footer}>
-        <span>Cesar Dimi - 2023</span>
-      </footer>
+      <div className={styles.login}>
+        <button className={styles.gitButton} onClick={() => signIn()}>
+          <BsGithub />
+          login
+        </button>
+      </div>
     </div>
   )
 }

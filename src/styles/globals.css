@@ -35,6 +35,8 @@ body {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  display: flex;
+  justify-content: center;
 }
 
 li {
@@ -49,9 +51,26 @@ a {
 #__next {
   height: inherit;
   width: inherit;
+  max-width: 1366px;
   overflow: hidden;
   align-items: center;
   padding: 0.5rem;
+}
+
+.profileLogin {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileLogin .profile {
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  max-width: 450px;
+  border: 1px solid var(--grey-lighter);
 }
 
 .app {
@@ -78,4 +97,72 @@ a {
   overflow: hidden;
   grid-area: display;
   min-width: 320px;
+}
+
+footer,
+nav {
+  display: none;
+}
+
+.appLogoff {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+.sectionLgoff {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  max-width: 450px;
+  border: 1px solid var(--grey-lighter);
+}
+
+@media only screen and (max-width: 995px) {
+  #__next {
+    padding: 0;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+  }
+
+  .profile,
+  .repos,
+  .display {
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    max-width: 450px;
+    border: 1px solid var(--grey-lighter);
+  }
+
+  nav {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--grey-bolder);
+    gap: 0.5rem;
+    border: 1px solid var(--grey-lighter);
+    max-width: 450px;
+  }
+
+  .itemNav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
 }

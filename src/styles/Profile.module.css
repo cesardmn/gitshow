@@ -27,7 +27,7 @@
 }
 
 .profileWrapper h1::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0px;
   width: 43%;
@@ -38,7 +38,6 @@
   right: 17%;
   border-radius: 8px;
 }
-
 
 /*  */
 .avatar {
@@ -51,10 +50,16 @@
 
 .avatar img {
   border-radius: 50%;
-  height: 90%;
+  height: 70%;
   width: auto;
   color: var(--grey-bolder);
   object-fit: cover;
+}
+
+.avatar .icon {
+  color: var(--grey-bolder);
+  height: 70%;
+  width: 100%;
 }
 
 .user {
@@ -107,6 +112,48 @@
   scale: 1.1;
 }
 
+.about {
+  height: 10%;
+  width: 100%;
+  font-style: italic;
+  font-weight: bold;
+  font-size: x-large;
+  margin: 2rem 0;
+  text-align: center;
+  color: var(--grey-bolder);
+  padding: 1rem;
+  /* border: 1px solid red; */
+}
+
+.displayHero {
+  height: 40%;
+  width: 100%;
+  padding: 1.5rem;
+  /* border: 1px solid red; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 1rem 0; */
+}
+.displayHero img {
+  height: 100%;
+  width: auto;
+}
+
+.login {
+  height: 30%;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.login .gitButton {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--grey-bolder);
+  margin-top: 1rem;
+}
+
 .signOutButton {
   width: 88px;
   border: grey;
@@ -124,4 +171,12 @@
 
 .signOutButton:hover {
   scale: 1.1;
+}
+
+@media only screen and (max-width: 995px) {
+  .profileWrapper h1::after {
+    width: 30%;
+    right: 27%;
+    border-radius: 8px;
+  }
 }

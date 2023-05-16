@@ -61,7 +61,8 @@ export default function Repos() {
           <p>{repo.description}</p>
           <p className={styles.language}>
             {repo.language}
-            <span className={styles.showButton}
+            <span
+              className={styles.showButton}
               onClick={(e) => {
                 handleDisplay(repo)
               }}

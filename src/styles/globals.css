@@ -1,15 +1,11 @@
 :root {
-  /* blue */
-  --blue-lighter: #2b3945;
-  --blue-normal: #202c37;
-  --blue-bolder: #111517;
-
-  /* grey */
+  --bg: #ffffff;
   --grey-lighter: #d0d7de;
   --grey-normal: #656d762a;
   --grey-bolder: #656d76;
-
-  --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --primary: #0969da;
+  --secondary: #fd837c;
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 * {
@@ -20,7 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   border: transparent;
   outline: transparent;
-  /* border: 1px solid var(--blue-bolder); */
+  border: 1px solid var(--blue-bolder);
 }
 
 html {
@@ -53,10 +49,18 @@ a {
   width: inherit;
   max-width: 1366px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 0.5rem;
 }
 
+@media only screen and (min-width: 1367px) {
+  #__next {
+    border: 1px solid var(--grey-lighter);
+  }
+}
+/* 
 .profileLogin {
   height: 100%;
   width: 100%;
@@ -165,4 +169,4 @@ nav {
     font-size: 1.5rem;
     cursor: pointer;
   }
-}
+} */

@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 // providers
 import { useUser } from '@providers/UserProvider.jsx'
 import { useRepos } from '@providers/ReposProvider.jsx'
+import { useReadme } from '@providers/ReadmeProvider.jsx'
 
 // components
 import Home from '@components/Home.jsx'
@@ -12,6 +13,7 @@ import Home from '@components/Home.jsx'
 export default function App() {
   const { user, setUser } = useUser()
   const { setRepos } = useRepos()
+  const { setReadme } = useReadme()
 
   useEffect(() => {
     const storagedUser =
@@ -24,8 +26,9 @@ export default function App() {
 
       console.log(readme)
 
-      storagedUser && setUser(storagedUser.user)
-      storagedUser && setRepos(repos)
+      setUser(storagedUser.user)
+      setRepos(repos)
+      setReadme(readme)
     }
   }, [])
 

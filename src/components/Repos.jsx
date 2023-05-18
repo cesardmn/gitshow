@@ -20,7 +20,7 @@ export default function Repos() {
 
   return (
     <div className={styles.reposWraper}>
-      a<h2>Repos</h2>
+      <h2>Repos</h2>
       <ul className={styles.cardList}>
         {repos.map((repo) => (
           <li

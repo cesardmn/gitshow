@@ -1,185 +1,3 @@
-/* * .profileWrapper {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  gap: 1rem;
-  position: relative;
-}
-
-.profileWrapper h1 {
-  overflow: hidden;
-  height: 10%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Audiowide', cursive;
-  font-size: xxx-large;
-  color: #0969da;
-  position: relative;
-}
-
-.profileWrapper h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0px;
-  width: 43%;
-  height: 4px;
-  display: flex;
-  justify-content: flex-end;
-  background-color: #fd837c;
-  right: 17%;
-  border-radius: 8px;
-}
-
-
-.avatar {
-  height: 40%;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  overflow: hidden;
-}
-
-.avatar img {
-  border-radius: 50%;
-  height: 70%;
-  width: auto;
-  color: var(--grey-bolder);
-  object-fit: cover;
-}
-
-.avatar .icon {
-  color: var(--grey-bolder);
-  height: 70%;
-  width: 100%;
-}
-
-.user {
-  height: 55%;
-  width: 100%;
-  padding: 0.5rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 2rem;
-}
-
-.footer {
-  width: 100%;
-  height: 2%;
-  font-size: smaller;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  color: var(--grey-bolder);
-}
-
-.user h2 {
-  margin-top: 1rem;
-}
-.user h3 {
-  color: var(--grey-bolder);
-  font-weight: lighter;
-  margin-top: -0.5rem;
-}
-
-.bio {
-  margin: 1.5rem 0;
-}
-
-.gitButton {
-  width: 100%;
-  border: grey;
-  padding: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: var(--nav-shadow);
-  cursor: pointer;
-  transition: 0.5s;
-}
-.gitButton:hover {
-  scale: 1.1;
-}
-
-.about {
-  height: 10%;
-  width: 100%;
-  font-style: italic;
-  font-weight: bold;
-  font-size: x-large;
-  margin: 2rem 0;
-  text-align: center;
-  color: var(--grey-bolder);
-  padding: 1rem;
-  border: 1px solid red;
-}
-
-.displayHero {
-  height: 40%;
-  width: 100%;
-  padding: 1.5rem;
-  border: 1px solid red;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem 0;
-}
-.displayHero img {
-  height: 100%;
-  width: auto;
-}
-
-.login {
-  height: 30%;
-  width: 100%;
-  padding: 1rem 2rem;
-}
-.login .gitButton {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  color: var(--grey-bolder);
-  margin-top: 1rem;
-}
-
-.signOutButton {
-  width: 88px;
-  border: grey;
-  padding: 0.6rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: xx-small;
-  border-radius: 8px;
-  box-shadow: var(--nav-shadow);
-  cursor: pointer;
-  transition: 0.5s;
-  color: var(--grey-bolder);
-  margin-top: 1rem;
-}
-
-.signOutButton:hover {
-  scale: 1.1;
-}
-
-@media only screen and (max-width: 995px) {
-  .profileWrapper h1::after {
-    width: 30%;
-    right: 27%;
-    border-radius: 8px;
-  }
-} */
-
-
 .logon {
   height: 100%;
   width: 100%;
@@ -188,13 +6,16 @@
   grid-template-rows: 1.5fr 4fr 6fr;
 }
 
-.logo, .avatar, .infos {
+.logo,
+.avatar,
+.infos {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-.logo, .avatar {
+.logo,
+.avatar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,7 +39,7 @@
   font-weight: bolder;
 }
 
-.user h3{
+.user h3 {
   color: var(--grey-bolder);
   font-size: 1rem;
   margin-top: -0.3em;
@@ -235,7 +56,7 @@
 
 .signOut:hover {
   font-size: small;
-  color: var(--secondary  );
+  color: var(--secondary);
 }
 
 .bio {
@@ -245,35 +66,3 @@
 .location {
   color: var(--grey-bolder);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

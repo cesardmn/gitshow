@@ -12,6 +12,7 @@ import { TfiLayoutAccordionList } from 'react-icons/tfi'
 
 // components
 import Profile from './Profile'
+import Repos from './Repos'
 
 export default function Home() {
   const { user } = useUser()
@@ -31,7 +32,11 @@ export default function Home() {
             <Profile />
           </div>
         )}
-        {viewChoice === 'repos' && <div className={styles.view}>repos</div>}
+        {viewChoice === 'repos' && (
+          <div className={styles.view}>
+            <Repos />
+          </div>
+        )}
         {viewChoice === 'readme' && <div className={styles.view}>readme</div>}
       </div>
 

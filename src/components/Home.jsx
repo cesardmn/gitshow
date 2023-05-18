@@ -11,7 +11,7 @@ import { CgListTree } from 'react-icons/cg'
 import { TfiLayoutAccordionList } from 'react-icons/tfi'
 
 // components
-import Logo from './Logo'
+import Profile from './Profile'
 
 export default function Home() {
   const { user } = useUser()
@@ -27,7 +27,9 @@ export default function Home() {
 
       <div className={styles.content}>
         {viewChoice === 'profile' && (
-          <div className={styles.view}>{/* Profile Component */}</div>
+          <div className={styles.view}>
+            <Profile />
+          </div>
         )}
         {viewChoice === 'repos' && <div className={styles.view}>repos</div>}
         {viewChoice === 'readme' && <div className={styles.view}>readme</div>}

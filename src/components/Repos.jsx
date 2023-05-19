@@ -10,13 +10,14 @@ import styles from '@styles/Repos.module.css'
 import { FaLaptopCode } from 'react-icons/fa'
 import { BiCodeBlock } from 'react-icons/bi'
 
-export default function Repos() {
+export default function Repos({setViewChoice}) {
   const { repos } = useRepos()
   const { setReadme } = useReadme()
 
   const handleReadme = (repo) => {
     console.log(repo.readme)
     setReadme(repo.readme)
+    setViewChoice('readme')
   }
 
   return (

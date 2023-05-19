@@ -35,7 +35,7 @@ export default function Home() {
         )}
         {viewChoice === 'repos' && (
           <div className={styles.view}>
-            <Repos />
+            <Repos  setViewChoice={setViewChoice} />
           </div>
         )}
         {viewChoice === 'readme' && (

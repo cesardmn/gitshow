@@ -15,6 +15,7 @@ export default function Repos() {
   const { setReadme } = useReadme()
 
   const handleReadme = (repo) => {
+    console.log(repo.readme)
     setReadme(repo.readme)
   }
 

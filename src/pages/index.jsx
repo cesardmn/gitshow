@@ -22,13 +22,11 @@ export default function App() {
     if (storagedUser) {
       const login = storagedUser.user.login
       const repos = storagedUser.repos
-      const readme = repos.find((repo) => repo['name'] === login).readme || ''
-
-      console.log(readme)
+      const readme = repos.find((repo) => repo['name'] === login) || null
 
       setUser(storagedUser.user)
-      setRepos(repos)
-      setReadme(readme)
+      repos && setRepos(repos)
+      readme.readme.content && setReadme(readme.readme)
     }
   }, [])
 

@@ -10,9 +10,15 @@ import styles from '@styles/Readme.module.css'
 
 // providers
 import { useReadme } from '@src/providers/ReadmeProvider.jsx'
+import { useUser } from '@src/providers/UserProvider.jsx'
 
 export default function Readme() {
   const { readme } = useReadme()
+
+  // const { user } = useUser()
+  const url = `${readme.download_url.replace(/\/[^\/]+$/, '')}/`
+  const show = readme.content.replaceAll('./', url)
+  console.log(readme)
 
   return (
     <div className={styles.reposWraper}>
@@ -26,7 +32,7 @@ export default function Readme() {
             ),
           }}
         >
-          {readme}
+          {show}
         </ReactMarkdown>
       </div>
     </div>

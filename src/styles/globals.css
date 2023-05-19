@@ -1,15 +1,11 @@
 :root {
-  /* blue */
-  --blue-lighter: #2b3945;
-  --blue-normal: #202c37;
-  --blue-bolder: #111517;
-
-  /* grey */
+  --bg: #ffffff;
   --grey-lighter: #d0d7de;
   --grey-normal: #656d762a;
   --grey-bolder: #656d76;
-
-  --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --primary: #0969da;
+  --secondary: #fd837c;
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 * {
@@ -20,7 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   border: transparent;
   outline: transparent;
-  /* border: 1px solid var(--blue-bolder); */
+  border: 1px solid var(--blue-bolder);
 }
 
 html {
@@ -35,6 +31,8 @@ body {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  display: flex;
+  justify-content: center;
 }
 
 li {
@@ -49,9 +47,34 @@ a {
 #__next {
   height: inherit;
   width: inherit;
+  max-width: 1366px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 0.5rem;
+}
+
+@media only screen and (min-width: 1367px) {
+  #__next {
+    border: 1px solid var(--grey-lighter);
+  }
+}
+/* 
+.profileLogin {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileLogin .profile {
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  max-width: 450px;
+  border: 1px solid var(--grey-lighter);
 }
 
 .app {
@@ -79,3 +102,71 @@ a {
   grid-area: display;
   min-width: 320px;
 }
+
+footer,
+nav {
+  display: none;
+}
+
+.appLogoff {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+.sectionLgoff {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  max-width: 450px;
+  border: 1px solid var(--grey-lighter);
+}
+
+@media only screen and (max-width: 995px) {
+  #__next {
+    padding: 0;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+  }
+
+  .profile,
+  .repos,
+  .display {
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    max-width: 450px;
+    border: 1px solid var(--grey-lighter);
+  }
+
+  nav {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--grey-bolder);
+    gap: 0.5rem;
+    border: 1px solid var(--grey-lighter);
+    max-width: 450px;
+  }
+
+  .itemNav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+} */

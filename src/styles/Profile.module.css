@@ -1,127 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
-* .profileWrapper {
+.logon {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /* padding: 1rem; */
-  gap: 1rem;
-  position: relative;
+  display: grid;
+  grid-template-rows: 1.5fr 4fr 6fr;
 }
 
-.profileWrapper h1 {
-  overflow: hidden;
-  height: 10%;
+.logo,
+.avatar,
+.infos {
+  height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+
+.logo,
+.avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Audiowide', cursive;
-  font-size: xxx-large;
-  color: #0969da;
-  position: relative;
-}
-
-.profileWrapper h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  width: 43%;
-  height: 4px;
-  display: flex;
-  justify-content: flex-end;
-  background-color: #fd837c;
-  right: 17%;
-  border-radius: 8px;
-}
-
-
-/*  */
-.avatar {
-  height: 40%;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  overflow: hidden;
 }
 
 .avatar img {
+  height: 100%;
   border-radius: 50%;
-  height: 90%;
-  width: auto;
-  color: var(--grey-bolder);
-  object-fit: cover;
 }
 
-.user {
-  height: 55%;
-  width: 100%;
-  padding: 0.5rem;
-  overflow: hidden;
+.infos {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0 2rem;
-}
-
-.footer {
-  width: 100%;
-  height: 2%;
-  font-size: smaller;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  color: var(--grey-bolder);
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .user h2 {
-  margin-top: 1rem;
+  font-weight: bolder;
 }
+
 .user h3 {
   color: var(--grey-bolder);
-  font-weight: lighter;
-  margin-top: -0.5rem;
+  font-size: 1rem;
+  margin-top: -0.3em;
+}
+
+.signOut {
+  font-size: x-small;
+  cursor: pointer;
+  padding: 1rem 0;
+  text-decoration: underline;
+  color: var(--grey-bolder);
+  transition: 0.5s;
+}
+
+.signOut:hover {
+  font-size: small;
+  color: var(--secondary);
 }
 
 .bio {
-  margin: 1.5rem 0;
+  margin: 0.5rem 0;
 }
 
-.gitButton {
-  width: 100%;
-  border: grey;
-  padding: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: var(--nav-shadow);
-  cursor: pointer;
-  transition: 0.5s;
-}
-.gitButton:hover {
-  scale: 1.1;
-}
-
-.signOutButton {
-  width: 88px;
-  border: grey;
-  padding: 0.6rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: xx-small;
-  border-radius: 8px;
-  box-shadow: var(--nav-shadow);
-  cursor: pointer;
-  transition: 0.5s;
+.location {
   color: var(--grey-bolder);
-  margin-top: 1rem;
-}
-
-.signOutButton:hover {
-  scale: 1.1;
 }

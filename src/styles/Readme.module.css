@@ -4,13 +4,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  /* overflow-y: scroll; */
-  /* border: 1px solid var(--grey-lighter); */
+}
+.title {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  text-decoration: underline var(--secondary);
+  box-shadow: var(--shadow);
 }
 
 .readmeContainer {
-  height: 100%;
+  height: 90%;
   width: 100%;
   padding: 1rem;
   overflow-y: scroll;

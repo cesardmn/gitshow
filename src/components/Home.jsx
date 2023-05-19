@@ -24,54 +24,70 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.home}>
+    <>
       {/* content mobile*/}
+      <div className={styles.mobile}>
+        <div className={styles.content}>
+          {viewChoice === 'profile' && (
+            <div className={styles.view}>
+              <Profile />
+            </div>
+          )}
+          {viewChoice === 'repos' && (
+            <div className={styles.view}>
+              <Repos setViewChoice={setViewChoice} />
+            </div>
+          )}
+          {viewChoice === 'readme' && (
+            <div className={styles.view}>
+              <Readme />
+            </div>
+          )}
+        </div>
 
-      <div className={styles.content}>
-        {viewChoice === 'profile' && (
+        {/* nav */}
+        <nav className={styles.nav}>
+          <span
+            className={styles.navItem}
+            onClick={() => {
+              handleViewChoice('profile')
+            }}
+          >
+            <BsGithub />
+          </span>
+          <span
+            className={styles.navItem}
+            onClick={() => {
+              handleViewChoice('repos')
+            }}
+          >
+            <CgListTree />
+          </span>
+          <span
+            className={styles.navItem}
+            onClick={() => {
+              handleViewChoice('readme')
+            }}
+          >
+            <TfiLayoutAccordionList />
+          </span>
+        </nav>
+      </div>
+
+      <div className={styles.desktop}>
+        {/* content desktop */}
+        <div className={styles.content}>
           <div className={styles.view}>
             <Profile />
           </div>
-        )}
-        {viewChoice === 'repos' && (
           <div className={styles.view}>
-            <Repos  setViewChoice={setViewChoice} />
+            <Repos setViewChoice={setViewChoice} />
           </div>
-        )}
-        {viewChoice === 'readme' && (
           <div className={styles.view}>
             <Readme />
           </div>
-        )}
+        </div>
       </div>
-
-      {/* nav */}
-      <nav className={styles.nav}>
-        <span
-          className={styles.navItem}
-          onClick={() => {
-            handleViewChoice('profile')
-          }}
-        >
-          <BsGithub />
-        </span>
-        <span
-          className={styles.navItem}
-          onClick={() => {
-            handleViewChoice('repos')
-          }}
-        >
-          <CgListTree />
-        </span>
-        <span
-          className={styles.navItem}
-          onClick={() => {
-            handleViewChoice('readme')
-          }}
-        >
-          <TfiLayoutAccordionList />
-        </span>
-      </nav>
-    </div>
+    </>
   )
 }

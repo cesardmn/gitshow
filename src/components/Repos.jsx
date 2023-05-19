@@ -1,6 +1,3 @@
-// react
-import { useState, useEffect } from 'react'
-
 // providers
 import { useRepos } from '@providers/ReposProvider.jsx'
 import { useReadme } from '@src/providers/ReadmeProvider.jsx'
@@ -10,7 +7,7 @@ import styles from '@styles/Repos.module.css'
 import { FaLaptopCode } from 'react-icons/fa'
 import { BiCodeBlock } from 'react-icons/bi'
 
-export default function Repos({setViewChoice}) {
+export default function Repos({ setViewChoice }) {
   const { repos } = useRepos()
   const { setReadme } = useReadme()
 

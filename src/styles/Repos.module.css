@@ -27,6 +27,15 @@
   padding: 1rem;
 }
 
+.cardList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardList::-webkit-scrollbar-thumb {
+  background-color: var(--grey-lighter);
+  border-radius: 20px;
+}
+
 .card {
   height: auto;
   width: 100%;

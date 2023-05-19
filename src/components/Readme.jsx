@@ -10,7 +10,6 @@ import styles from '@styles/Readme.module.css'
 
 // providers
 import { useReadme } from '@src/providers/ReadmeProvider.jsx'
-import { useUser } from '@src/providers/UserProvider.jsx'
 
 export default function Readme() {
   const { readme } = useReadme()

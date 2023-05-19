@@ -23,6 +23,15 @@
   overflow-y: scroll;
 }
 
+.readmeContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.readmeContainer::-webkit-scrollbar-thumb {
+  background-color: var(--grey-lighter);
+  border-radius: 20px;
+}
+
 .markdownImg {
   max-width: 100%;
   height: auto;
